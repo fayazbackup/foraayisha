@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background: linear-gradient(to bottom, rgba(255, 222, 233, 0.2), rgba(181, 255, 252, 0.3)),
+              url('https://images.unsplash.com/photo-1557218710-11f6cb922142?q=80&w=2051&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.container {
+  text-align: center;
+  width: 85%;           /* Slightly narrower */
+  max-width: 700px;     /* Reduced from 800px */
+}
+
+/* Note Section */
+.note {
+  margin-top: 10px;
+  margin-bottom: 10px;  /* Slightly less space */
+}
+
+.note p {
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 20px;        /* Reduced padding from 30px */
+  border-radius: 20px;
+  font-size: 1.1rem;    /* Smaller font size for better readability */
+  line-height: 1.6;     /* Increase line spacing */
+  color: #5E3A4C;
+  font-family: 'Dancing Script', cursive;
+  border: 4px double #FF69B4;
+  box-shadow: 0 8px 16px rgba(255, 105, 180, 0.2);
+  opacity: 0.8;       /* Remove extra opacity for clearer text */
+}
+
+/* Full-width container for the question */
+.question {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+/* Button Section */
+button {
+  background: linear-gradient(145deg, #D6B8E6, #B48BCD); 
+  color: white;
+  border: 2px solid #9B7EBE; 
+  border-radius: 20px;
+  font-size: 1.0rem;
+  padding: 10px 25px;
+  margin: 5px;
+  width: 90%;
+  max-width: 500px;
+  font-family: 'Cormorant Garamond', serif;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 8px 16px rgba(180, 140, 205, 0.3);
+  position: relative;  /* For pseudo-element positioning */
+}
+
+button:hover {
+  background: linear-gradient(145deg, #B48BCD, #A97DCB); 
+  transform: translateY(-4px);
+}
+
+/* Cute Hover Effect for Button: Two Emojis on Both Sides */
+.question button {
+  position: relative;
+}
+
+.question button:hover::before,
+.question button:hover::after {
+  content: "🙂‍↕️";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) scale(0);
+  animation: cutePop 0.8s ease-out forwards;
+}
+
+/* Left Emoji */
+.question button:hover::before {
+  left: 10px;
+}
+
+/* Right Emoji */
+.question button:hover::after {
+  right: 10px;
+}
+
+@keyframes cutePop {
+  0% {
+    transform: translateY(-50%) scale(0);
+    opacity: 0;
+  }
+  30% {
+    transform: translateY(-60%) scale(1.5) rotate(-15deg);
+    opacity: 1;
+  }
+  60% {
+    transform: translateY(-55%) scale(1.3) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-70%) scale(0.8);
+    opacity: 0;
+  }
+}

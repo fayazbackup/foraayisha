@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  position: relative;
+  background: linear-gradient(to bottom, rgba(255, 222, 233, 0.2), rgba(168, 254, 251, 0.4)),
+              url('Clips/DdlwY85UwAEmhXh.jpeg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Segoe UI', sans-serif;
+  z-index: 1;
+}
+
+.container {
+  text-align: center;
+  width: 90%;
+  max-width: 800px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Note Section */
+.note {
+  margin-bottom: 15px;
+}
+
+.note p {
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 30px;
+  border-radius: 20px;
+  font-size: 1.4rem;
+  color: #5E3A4C;
+  font-family: 'Dancing Script', cursive;
+  border: 4px double #FF69B4;
+  box-shadow: 0 8px 16px rgba(255, 105, 180, 0.2);
+  opacity: 0.7;
+  margin-bottom: 15px;
+}
+
+/* Video Container */
+.video-container {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+video {
+  width: 100%;
+  max-width: 600px;
+  border: 2px solid #FF69B4;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(255, 105, 180, 0.2);
+}
+
+/* Full-width container for the question */
+.question {
+  width: 100%;
+  display: flex;
+  flex-direction: column; /* Stack buttons vertically */
+  justify-content: center;
+  margin-bottom: 5px;
+}
+
+.question p {
+  background: linear-gradient(135deg, #FFF5F7, #FFE4EB);
+  padding: 20px;
+  border-radius: 20px;
+  font-size: 1.2rem;
+  color: #8B3A62;
+  font-family: 'Cormorant Garamond', serif;
+  border: 2px solid #FFC2D1;
+  width: 80%;
+  max-width: 600px;
+  box-shadow: 0 8px 16px rgba(255, 194, 209, 0.3);
+  text-align: center;
+  margin: 0 auto 10px auto;
+}
+
+/* Button Section */
+button {
+  background: linear-gradient(145deg, #D6B8E6, #B48BCD);
+  color: white;
+  border: 2px solid #9B7EBE;
+  border-radius: 20px;
+  font-size: 1.2rem;
+  padding: 10px 25px;
+  margin: 5px;
+  width: 90%;
+  max-width: 500px;
+  font-family: 'Cormorant Garamond', serif;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 8px 16px rgba(180, 140, 205, 0.3);
+  position: relative; /* For overlay pseudo-elements */
+}
+
+button:hover {
+  background: linear-gradient(145deg, #B48BCD, #A97DCB);
+  transform: translateY(-4px);
+}
+
+/* Spacing Adjustments */
+.note p {
+  margin-bottom: 15px;
+}
+
+.question p {
+  margin-bottom: 10px;
+}
+
+button {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+/* --- Overlay Effects using :has() --- */
+
+/* White overlay for option2 button with class "white" */
+body:has(.option2.white:hover)::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(255, 255, 255, 0.3); /* Light white overlay */
+  backdrop-filter: brightness(1.2) blur(5px);
+  z-index: 0;
+}
+
+/* Dark overlay for option2 button with class "dark" */
+body:has(.option2.dark:hover)::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+  backdrop-filter: blur(5px);
+  z-index: 0;
+}
