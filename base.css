@@ -1,4 +1,4 @@
-/* Full background image with blur & moody effect */
+/* Full background image */
 body {
     margin: 0;
     padding: 0;
@@ -12,14 +12,15 @@ body {
     overflow: hidden;
 }
 
-/* Blur overlay layer */
+/* Blur overlay layer (default: no blur) */
 body::before {
     content: "";
     position: absolute;
     inset: 0;
     background: inherit;
-    filter: blur(5px) brightness(0.8);
+    filter: brightness(0.8); /* No blur by default */
     z-index: 0;
+    transition: filter 0.4s ease;
 }
 
 /* Dark semi-transparent overlay */
@@ -43,21 +44,18 @@ body::before {
     color: #5a2a27;
     font-family: 'Georgia', serif;
     position: relative;
+    z-index: 2;
 }
 
-/* Add a faint glowing heart icon */
-.message-box::before {
-    content: "❤️";
-    font-size: 28px;
-    position: absolute;
-    top: -18px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-/* Hover effect with gentle pulse */
+/* Hover effect with gentle pulse + blur background */
 .message-box:hover {
     transform: scale(1.07);
     background: linear-gradient(145deg, #ffe4e1, #fff0f5);
     box-shadow: 0 8px 25px rgba(255, 105, 180, 0.5);
+}
+
+/* When hovering the message box, blur the background */
+.message-box:hover ~ body::before,
+.message-box:hover ~ ::before {
+    filter: blur(5px) brightness(0.8);
 }
