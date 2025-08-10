@@ -1,4 +1,10 @@
 /* Full background image */
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');
+
+
 body {
     margin: 0;
     padding: 0;
@@ -47,40 +53,14 @@ body.blur-bg::before {
     text-align: center;
     font-size: 20px;
     color: #5a2a27;
-    font-family: 'Georgia', serif;
+    font-family: 'Dancing Script', cursive;
     position: relative;
     z-index: 2;
 }
 
-/* Hover effect for box */
+/* Hover effect for box (scale + tilt) */
 .message-box:hover {
-    transform: scale(1.07);
+    transform: scale(1.07) rotate(3deg);
     background: linear-gradient(145deg, #ffe4e1, #fff0f5);
     box-shadow: none;
-}
-
-/* Emoji appears on hover */
-.message-box:hover::after {
-    content: "😶‍🌫️";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0);
-    animation: cutePop 0.8s ease-out forwards;
-}
-
-/* Pop animation */
-@keyframes cutePop {
-    0% {
-        transform: translate(-50%, -50%) scale(0);
-        opacity: 0;
-    }
-    50% {
-        transform: translate(-50%, -50%) scale(1.2);
-        opacity: 1;
-    }
-    100% {
-        transform: translate(-50%, -50%) scale(1);
-        opacity: 1;
-    }
 }
