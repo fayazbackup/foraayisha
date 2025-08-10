@@ -9,5 +9,5 @@ msgBox.addEventListener('mouseleave', () => {
 });
 
 msgBox.addEventListener('click', () => {
-    window.location.href = "index.html"; // Change to your target page
+    window.location.href = "index1.html"; // Change to your target page
 });
