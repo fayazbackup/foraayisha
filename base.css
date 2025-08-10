@@ -12,15 +12,20 @@ body {
     overflow: hidden;
 }
 
-/* Blur overlay layer (default: no blur) */
+/* Background overlay (default no blur) */
 body::before {
     content: "";
     position: absolute;
     inset: 0;
     background: inherit;
-    filter: brightness(0.8); /* No blur by default */
+    filter: brightness(0.8);
     z-index: 0;
     transition: filter 0.4s ease;
+}
+
+/* Apply blur when class is added */
+body.blur-bg::before {
+    filter: blur(10px) brightness(0.6);
 }
 
 /* Dark semi-transparent overlay */
@@ -47,16 +52,9 @@ body::before {
     z-index: 2;
 }
 
-/* Hover effect with gentle pulse + blur background */
+/* Hover effect for box */
 .message-box:hover {
     transform: scale(1.07);
     background: linear-gradient(145deg, #ffe4e1, #fff0f5);
     box-shadow: 0 8px 25px rgba(255, 105, 180, 0.5);
 }
-
-/* When hovering the message box, blur the background */
-.message-box:hover ~ body::before,
-.message-box:hover ~ ::before {
-    filter: blur(10px) brightness(0.6);
-}
-
