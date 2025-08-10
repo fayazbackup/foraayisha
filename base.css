@@ -3,21 +3,21 @@ body {
     margin: 0;
     padding: 0;
     height: 100vh;
-    background: url('placeholder.jpg') no-repeat center center/cover;
+    background: url('your-image.jpg') no-repeat center center/cover;
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: Arial, sans-serif;
 }
 
-/* Semi-transparent overlay for better text visibility */
+/* Dark overlay for better text visibility */
 .overlay {
     background-color: rgba(0, 0, 0, 0.4);
     padding: 20px;
     border-radius: 10px;
 }
 
-/* Message box styling */
+/* Message box */
 .message-box {
     background: white;
     padding: 20px 40px;
@@ -29,7 +29,7 @@ body {
     font-size: 18px;
 }
 
-/* Hover animation */
+/* Hover effect */
 .message-box:hover {
     transform: scale(1.05) rotate(1deg);
     background-color: #ffe6e6;
