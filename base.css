@@ -56,5 +56,31 @@ body.blur-bg::before {
 .message-box:hover {
     transform: scale(1.07);
     background: linear-gradient(145deg, #ffe4e1, #fff0f5);
-    box-shadow: 0 8px 25px rgba(255, 105, 180, 0.5);
+    box-shadow: none;
+}
+
+/* Emoji appears on hover */
+.message-box:hover::after {
+    content: "😶‍🌫️";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    animation: cutePop 0.8s ease-out forwards;
+}
+
+/* Pop animation */
+@keyframes cutePop {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.2);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
 }
