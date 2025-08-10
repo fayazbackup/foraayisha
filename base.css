@@ -1,4 +1,4 @@
-/* Full background image */
+/* Full background image with blur & moody effect */
 body {
     margin: 0;
     padding: 0;
@@ -7,31 +7,57 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: Arial, sans-serif;
+    font-family: 'Georgia', serif;
+    position: relative;
+    overflow: hidden;
 }
 
-/* Dark overlay for better text visibility */
+/* Blur overlay layer */
+body::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: inherit;
+    filter: blur(5px) brightness(0.8);
+    z-index: 0;
+}
+
+/* Dark semi-transparent overlay */
 .overlay {
     background-color: rgba(0, 0, 0, 0.4);
     padding: 20px;
-    border-radius: 10px;
+    border-radius: 15px;
+    z-index: 1;
 }
 
-/* Message box */
+/* Romantic message box */
 .message-box {
-    background: white;
-    padding: 20px 40px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    background: linear-gradient(145deg, #fff0f5, #ffe4e1);
+    padding: 25px 50px;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(255, 105, 180, 0.3);
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.4s ease;
     text-align: center;
-    font-size: 18px;
+    font-size: 20px;
+    color: #5a2a27;
+    font-family: 'Georgia', serif;
+    position: relative;
 }
 
-/* Hover effect */
+/* Add a faint glowing heart icon */
+.message-box::before {
+    content: "❤️";
+    font-size: 28px;
+    position: absolute;
+    top: -18px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Hover effect with gentle pulse */
 .message-box:hover {
-    transform: scale(1.05) rotate(1deg);
-    background-color: #ffe6e6;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+    transform: scale(1.07);
+    background: linear-gradient(145deg, #ffe4e1, #fff0f5);
+    box-shadow: 0 8px 25px rgba(255, 105, 180, 0.5);
 }
