@@ -64,3 +64,7 @@ body.blur-bg::before {
     background: linear-gradient(145deg, #ffe4e1, #fff0f5);
     box-shadow: none;
 }
+.message-box p:first-child {
+    font-size: 2.2em;
+    font-weight: 600;
+}
